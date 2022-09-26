@@ -1,6 +1,6 @@
 # This version needs to be compatible with the version of ESP-IDF specified in `esp-idf/default.nix`.
 { version ? "2020r3"
-, hash ? "sha256-KKC0Z7nSt1mrSLLyeu1oRYHzPJbihCmSeBxOBFmSxbA="
+, hash ? "sha256-Z0CAoS+cXr5aOlzlHG3q7/5t+wbWQWIz34byW1dOknk="
 , stdenv
 , lib
 , fetchurl
