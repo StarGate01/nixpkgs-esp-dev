@@ -10,7 +10,13 @@
     overlay = import ./overlay.nix;
   } // flake-utils.lib.eachSystem [ "x86_64-linux" ] (system:
     let
-      pkgs = import nixpkgs { inherit system; overlays = [ self.overlay ]; };
+      pkgs = import nixpkgs { 
+        inherit system;
+        overlays = [ self.overlay ];
+        config.permittedInsecurePackages = [
+          "python-2.7.18.6-env"
+        ];
+      };
     in
     {
       packages = {
