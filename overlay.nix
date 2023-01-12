@@ -19,7 +19,7 @@ in
   gcc-riscv32-esp32c3-elf-bin = prev.callPackage ./pkgs/esp32c3-toolchain-bin.nix { };
   # ESP32S2
   gcc-xtensa-esp32s2-elf-bin = prev.callPackage ./pkgs/esp32s2-toolchain-bin.nix { };
-  # ESP32S2
+  # ESP32S3
   gcc-xtensa-esp32s3-elf-bin = prev.callPackage ./pkgs/esp32s3-toolchain-bin.nix { };
   # ESP32
   gcc-xtensa-esp32-elf-bin = prev.callPackage ./pkgs/esp32-toolchain-bin.nix { };
