@@ -9,6 +9,7 @@ let
   };
 
   mach-nix = import mach-nix-src {
+    python = "python27";
     pypiDataRev = "1d17587404960e2e9fd0fd7e514b0bbc52abcdfd";
     pypiDataSha256 = "sha256:078i0af4s1la5cafq958wfk8as711qlf81ngrg0xq0wys7ainig1";
     pkgs = final;
