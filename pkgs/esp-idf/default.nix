@@ -29,6 +29,7 @@ let
     in
     mach-nix.mkPython
       {
+        python = "python27";
         requirements = requirementsText;
       };
 in
