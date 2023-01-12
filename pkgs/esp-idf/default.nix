@@ -31,6 +31,9 @@ let
       {
         python = "python27";
         requirements = requirementsText;
+        providers = {
+          _default = "wheel,sdist,nixpkgs";
+        };
       };
 in
 stdenv.mkDerivation rec {
