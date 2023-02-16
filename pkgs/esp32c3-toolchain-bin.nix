@@ -1,6 +1,6 @@
 # This version needs to be compatible with the version of ESP-IDF specified in `esp-idf/default.nix`.
-{ version ? "2021r2-patch3"
-, hash ? "sha256-F5y61Xl5CtNeD0FKGNkAF8DxWMOXAiQRqOmGfbIXTxU="
+{ version ? "2021r2-patch5"
+, hash ? "sha256-99c+X54t8+psqOLJXWym0j1rOP0QHqXTAS88s81Z858="
 , stdenv
 , lib
 , fetchurl
@@ -8,7 +8,7 @@
 , buildFHSUserEnv
 }:
 
-let
+wlet
   fhsEnv = buildFHSUserEnv {
     name = "esp32c3-toolchain-env";
     targetPkgs = pkgs: with pkgs; [ zlib ];

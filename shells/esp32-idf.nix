@@ -23,5 +23,6 @@ pkgs.mkShell {
     ninja
 
     ncurses5
+    python27Packages.python
   ];
 }
