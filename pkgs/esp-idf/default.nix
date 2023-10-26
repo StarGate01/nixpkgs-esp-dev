@@ -1,6 +1,6 @@
 # When updating to a newer version, check if the version of `esp32*-toolchain-bin.nix` also needs to be updated.
 { rev ? "v4.4.1"
-, sha256 ? "sha256-4dAGcJN5JVV9ywCOuhMbdTvlJSCrJdlMV6wW06xcrys="
+, sha256 ? "sha256-b5sDQcw7L218jN4KIMTFjc2nI1fOtvNak1uTdDS6H90="
 , stdenv
 , lib
 , fetchFromGitHub
@@ -9,9 +9,9 @@
 
 let
   src = fetchFromGitHub {
-    owner = "espressif";
+    owner = "StarGate01";
     repo = "esp-idf";
-    rev = rev;
+    rev = "eddde85f6bf05e89b388fa56e076b9ba51ea43d6";
     sha256 = sha256;
     fetchSubmodules = true;
   };
