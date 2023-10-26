@@ -6,6 +6,8 @@
 , fetchurl
 , makeWrapper
 , buildFHSUserEnv
+, autoPatchelfHook
+, python27Packages
 }:
 
 let
@@ -27,7 +29,17 @@ stdenv.mkDerivation rec {
     inherit hash;
   };
 
-  buildInputs = [ makeWrapper ];
+  buildInputs = [ 
+    makeWrapper
+    stdenv.cc.cc
+    python27Packages.python
+  ];
+
+  nativeBuildInputs = [
+    autoPatchelfHook
+  ];
+
+  dontAutoPatchelf = true;
 
   phases = [ "unpackPhase" "installPhase" ];
 
@@ -36,6 +48,7 @@ stdenv.mkDerivation rec {
     for FILE in $(ls $out/bin); do
       FILE_PATH="$out/bin/$FILE"
       if [[ -x $FILE_PATH ]]; then
+        autoPatchelf $FILE_PATH
         mv $FILE_PATH $FILE_PATH-unwrapped
         makeWrapper ${fhsEnv}/bin/esp32s3-toolchain-env $FILE_PATH --add-flags "$FILE_PATH-unwrapped"
       fi
