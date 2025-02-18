@@ -89,7 +89,7 @@ let
         ];
 
         postBuild = ''
-          echo ${rev} > idf_version.txt
+          echo ${lib.removePrefix "v" rev} > $out/idf_version.txt
         '';
       }));
 in
