@@ -89,7 +89,7 @@ let
         ];
 
         postBuild = ''
-          echo ${lib.removePrefix "v" rev} > $out/idf_version.txt
+          echo ${lib.versions.majorMinor (lib.removePrefix "v" rev)} > $out/idf_version.txt
         '';
       }));
 in
