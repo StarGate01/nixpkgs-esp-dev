@@ -17,6 +17,7 @@
 , callPackage
 
 , python3
+, python3Packages
 
   # Tools for using ESP-IDF.
 , git
@@ -50,12 +51,13 @@ let
 
   toolEnv = lib.mergeAttrsList (lib.mapAttrsToList (_: tool: tool.exportVars) tools);
 
-  customPython =
-    (python3.withPackages
-      (pythonPackages:
-        let
-          customPythonPackages = callPackage (import ./python-packages.nix) { inherit pythonPackages; };
-        in
+  customPython = (
+    let
+      pythonPackages = python3Packages;
+      customPythonPackages = callPackage (import ./python-packages.nix) { inherit pythonPackages; };
+    in
+    (python3.buildEnv.override {
+       extraLibs =
         with pythonPackages;
         with customPythonPackages;
         [
@@ -84,7 +86,12 @@ let
 
           # The esp idf vscode extension seems to want pip, too
           pip
-        ]));
+        ];
+
+        postBuild = ''
+          echo ${rev} > idf_version.txt
+        '';
+      }));
 in
 stdenv.mkDerivation rec {
   pname = "esp-idf";
