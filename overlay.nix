@@ -8,6 +8,7 @@ rec {
       "esp32ulp-elf"
       "openocd-esp32"
       "xtensa-esp-elf-gdb"
+      "qemu-xtensa"
     ];
   };
 
@@ -16,6 +17,7 @@ rec {
       "riscv32-esp-elf"
       "openocd-esp32"
       "riscv32-esp-elf-gdb"
+      "qemu-riscv"
     ];
   };
 
@@ -29,6 +31,7 @@ rec {
       "esp32ulp-elf"
       "openocd-esp32"
       "xtensa-esp-elf-gdb"
+      "qemu-xtensa"
     ];
   };
 
@@ -38,6 +41,7 @@ rec {
       "esp32ulp-elf"
       "openocd-esp32"
       "xtensa-esp-elf-gdb"
+      "qemu-xtensa"
     ];
   };
 
