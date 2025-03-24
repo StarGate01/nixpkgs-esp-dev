@@ -17,7 +17,7 @@ rec {
       "riscv32-esp-elf"
       "openocd-esp32"
       "riscv32-esp-elf-gdb"
-      "qemu-riscv"
+      "qemu-riscv32"
     ];
   };
 

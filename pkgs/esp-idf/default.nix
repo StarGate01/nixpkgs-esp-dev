@@ -10,7 +10,7 @@
     "openocd-esp32"
     "esp-rom-elfs"
     "qemu-xtensa"
-    "qemu-riscv"
+    "qemu-riscv32"
   ]
 , stdenv
 , lib
