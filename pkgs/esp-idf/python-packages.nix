@@ -95,9 +95,9 @@ rec {
 
     src =  fetchFromGitHub {
       owner = "StarGate01";
-      repo = "esp-idf";
+      repo = "esptool";
       rev = "virt-chipid";
-      sha256 = "";
+      sha256 = "sha256-no4Oufaii+NpdQFL2J3AkoJCt3BaU0HA/9KOs3IlM/8=";
     };
 
     doCheck = false;
