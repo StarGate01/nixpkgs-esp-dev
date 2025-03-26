@@ -93,9 +93,11 @@ rec {
     pname = "esptool";
     version = "4.8.1";
 
-    src = fetchPypi {
-      inherit pname version;
-      sha256 = "sha256-3E7ya2WeGo3LAZFHwOptlJgLNN6Z++CRIceUHIslRTE=";
+    src =  fetchFromGitHub {
+      owner = "StarGate01";
+      repo = "esp-idf";
+      rev = "virt-chipid";
+      sha256 = "";
     };
 
     doCheck = false;
